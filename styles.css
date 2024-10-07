@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #16035b, #be6e0c);    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stopwatch-title {
+    color: rgb(242, 177, 177);
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+
+.outer-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 12px grey;
+    position: relative;
+}
+
+.animation-bg {
+    background: linear-gradient(-45deg, #ee7752, orange, #e73c7e, #23a6d5, #23d5ab, red);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    animation-play-state: running;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.inner-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tick {
+    position: absolute;
+    width: 7px;
+    height: 8px;
+    background-color: rgb(0, 0, 0);
+}
+
+.tick:nth-child(1) { transform: rotate(0deg) translateX(140px); }
+.tick:nth-child(2) { transform: rotate(30deg) translateX(140px); }
+.tick:nth-child(3) { transform: rotate(60deg) translateX(140px); }
+.tick:nth-child(4) { transform: rotate(90deg) translateX(140px); }
+.tick:nth-child(5) { transform: rotate(120deg) translateX(140px); }
+.tick:nth-child(6) { transform: rotate(150deg) translateX(140px); }
+.tick:nth-child(7) { transform: rotate(180deg) translateX(140px); }
+.tick:nth-child(8) { transform: rotate(210deg) translateX(140px); }
+.tick:nth-child(9) { transform: rotate(240deg) translateX(140px); }
+.tick:nth-child(10) { transform: rotate(270deg) translateX(140px); }
+.tick:nth-child(11) { transform: rotate(300deg) translateX(140px); }
+.tick:nth-child(12) { transform: rotate(330deg) translateX(140px); }
+
+
+.text {
+    color: #e0e0e0;
+    font-size: 40px;
+}
+
+.minutes {
+    font-size: 43px;
+}
+
+.seconds {
+    font-size: 39px;
+}
+
+.milseconds {
+    font-size: 35px;
+}
+
+.button-wrapper {
+    width: 250px;
+    margin-top: 30px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;   
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #888;
+    background-color: black;
+    box-shadow: 0px 0px 10px grey;
+    color: white;
+    cursor: pointer;
+}
+
+.play:hover {
+    background-color: rgb(116, 255, 61);
+    color: black;
+}
+
+.reset:hover {
+    background-color: rgb(255, 61, 61);
+    color: black;
+}
+
+.lap:hover {
+    background-color: rgb(187, 61, 255);
+    color: black;
+}
+
+.laps {
+    list-style: none;
+    color: white;
+    width: 300px;
+    height: 250px;
+    overflow: auto;
+    position: relative;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    max-height: 200px;
+}
+
+.laps::-webkit-scrollbar {
+    display: none;
+}
+
+.lap-item {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 7px grey;
+    border: 1px solid #444;
+    border-radius: 50px;
+    background-color: rgb(16, 14, 44);
+    margin-bottom: 15px;
+}
+
+.number {
+    color: #cccccc;
+}
+
+.time-stamp {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.lap-clear-button {
+    position: fixed;
+    display: block;
+    z-index: 1000;
+    bottom: 20px;
+    width: 140px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 10px 0;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}

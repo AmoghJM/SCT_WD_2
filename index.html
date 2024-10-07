@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="stopwatch-title">Stopwatch</h1>  <!-- Add this line for the heading -->
+        <div class="watch">
+            <div class="outer-circle">
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="tick"></div>
+                <div class="inner-circle">
+                    <span class="text minutes">00 :</span> <!-- Updated to 00 -->
+                    <span class="text seconds">&nbsp;00 :</span> <!-- Updated to 00 -->
+                    <span class="text milseconds">&nbsp;00</span> <!-- Updated to 00 -->
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="button reset hidden">Reset</button>
+                <button class="button play">Play</button>
+                <button class="button lap hidden">Lap</button>
+            </div>
+        </div>
+        <ul class="laps">
+            <button class="lap-clear-button hidden">Clear All</button>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
