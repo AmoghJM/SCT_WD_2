@@ -2,28 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
 }
 
 body {
     font-family: sans-serif;
-    font-size: 16px;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to bottom right, #16035b, #be6e0c);    display: flex;
+    background: linear-gradient(to bottom right, #1a1a2e, #3451a0);
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    text-align: center;
 }
 
 .stopwatch-title {
-    color: rgb(242, 177, 177);
     font-size: 36px;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
+    margin-bottom: 40px;
+    color: #d7d2e8;
 }
-
 
 .outer-circle {
     width: 300px;
@@ -38,7 +37,7 @@ body {
 }
 
 .animation-bg {
-    background: linear-gradient(-45deg, #ee7752, orange, #e73c7e, #23a6d5, #23d5ab, red);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, rgb(0, 135, 14), #23a6d5, orange, #23d5ab, red);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
     animation-play-state: running;
@@ -48,150 +47,171 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
 }
 
 .inner-circle {
-    width: 280px;
-    height: 280px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    color: #ffff68;
+    font-size: 2rem;
 }
 
 .tick {
     position: absolute;
-    width: 7px;
-    height: 8px;
-    background-color: rgb(0, 0, 0);
+    width: 5px;
+    height: 15px;
+    background-color: #333;
 }
 
-.tick:nth-child(1) { transform: rotate(0deg) translateX(140px); }
-.tick:nth-child(2) { transform: rotate(30deg) translateX(140px); }
-.tick:nth-child(3) { transform: rotate(60deg) translateX(140px); }
-.tick:nth-child(4) { transform: rotate(90deg) translateX(140px); }
-.tick:nth-child(5) { transform: rotate(120deg) translateX(140px); }
-.tick:nth-child(6) { transform: rotate(150deg) translateX(140px); }
-.tick:nth-child(7) { transform: rotate(180deg) translateX(140px); }
-.tick:nth-child(8) { transform: rotate(210deg) translateX(140px); }
-.tick:nth-child(9) { transform: rotate(240deg) translateX(140px); }
-.tick:nth-child(10) { transform: rotate(270deg) translateX(140px); }
-.tick:nth-child(11) { transform: rotate(300deg) translateX(140px); }
-.tick:nth-child(12) { transform: rotate(330deg) translateX(140px); }
-
-
-.text {
-    color: #e0e0e0;
-    font-size: 40px;
+.tick:nth-child(1) {
+    transform: rotate(0deg) translateX(135px);
 }
 
-.minutes {
-    font-size: 43px;
+.tick:nth-child(2) {
+    transform: rotate(30deg) translateX(135px);
 }
 
-.seconds {
-    font-size: 39px;
+.tick:nth-child(3) {
+    transform: rotate(60deg) translateX(135px);
 }
 
-.milseconds {
-    font-size: 35px;
+.tick:nth-child(4) {
+    transform: rotate(90deg) translateX(135px);
+}
+
+.tick:nth-child(5) {
+    transform: rotate(120deg) translateX(135px);
+}
+
+.tick:nth-child(6) {
+    transform: rotate(150deg) translateX(135px);
+}
+
+.tick:nth-child(7) {
+    transform: rotate(180deg) translateX(135px);
+}
+
+.tick:nth-child(8) {
+    transform: rotate(210deg) translateX(135px);
+}
+
+.tick:nth-child(9) {
+    transform: rotate(240deg) translateX(135px);
+}
+
+.tick:nth-child(10) {
+    transform: rotate(270deg) translateX(135px);
+}
+
+.tick:nth-child(11) {
+    transform: rotate(300deg) translateX(135px);
+}
+
+.tick:nth-child(12) {
+    transform: rotate(330deg) translateX(135px);
 }
 
 .button-wrapper {
-    width: 250px;
-    margin-top: 30px;
-    margin-left: 25px;
     display: flex;
-    justify-content: space-between;   
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .button {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
-    border: 2px solid #888;
-    background-color: black;
-    box-shadow: 0px 0px 10px grey;
+    border: none;
+    background-color: #333;
     color: white;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
 }
 
 .play:hover {
-    background-color: rgb(116, 255, 61);
-    color: black;
-}
-
-.reset:hover {
-    background-color: rgb(255, 61, 61);
-    color: black;
+    background-color: #4caf50;
 }
 
 .lap:hover {
-    background-color: rgb(187, 61, 255);
-    color: black;
+    background-color: #673ab7;
+}
+
+.reset:hover {
+    background-color: #e91e63;
+}
+
+.lap-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.lap-item .number {
+    font-weight: bold;
+    color: #555;
+}
+
+.lap-item .time-stamp {
+    font-family: monospace;
 }
 
 .laps {
-    list-style: none;
+    padding-top: 20px;
+    overflow-y: auto;
+    max-height: 150px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.lap-clear-button {
+    margin: 10px auto;
+    font-size: 16px;
     color: white;
-    width: 300px;
-    height: 250px;
-    overflow: auto;
-    position: relative;
-    margin-top: 30px;
-    padding: 10px;
-    border-radius: 10px;
-    max-height: 200px;
+    background-color: #e74c3c;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.lap-clear-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
 }
 
 .laps::-webkit-scrollbar {
     display: none;
 }
 
-.lap-item {
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0px 0px 7px grey;
-    border: 1px solid #444;
-    border-radius: 50px;
-    background-color: rgb(16, 14, 44);
-    margin-bottom: 15px;
+.laps {
+    scrollbar-width: none;
 }
-
-.number {
-    color: #cccccc;
-}
-
-.time-stamp {
-    display: inline-block;
-    margin-left: 25px;
-}
-
-.lap-clear-button {
-    position: fixed;
-    display: block;
-    z-index: 1000;
-    bottom: 20px;
-    width: 140px;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 10px 0;
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid white;
-    cursor: pointer;
-}
-
 .hidden {
-    visibility: hidden;
+    display: none;
 }

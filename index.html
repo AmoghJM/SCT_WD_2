@@ -8,9 +8,9 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="stopwatch-title">Stopwatch</h1>  <!-- Add this line for the heading -->
+        <h1 class="stopwatch-title">Stopwatch</h1>
         <div class="watch">
-            <div class="outer-circle">
+            <div class="outer-circle animation-bg">
                 <div class="tick"></div>
                 <div class="tick"></div>
                 <div class="tick"></div>
@@ -24,9 +24,9 @@
                 <div class="tick"></div>
                 <div class="tick"></div>
                 <div class="inner-circle">
-                    <span class="text minutes">00 :</span> <!-- Updated to 00 -->
-                    <span class="text seconds">&nbsp;00 :</span> <!-- Updated to 00 -->
-                    <span class="text milseconds">&nbsp;00</span> <!-- Updated to 00 -->
+                    <span class="text minutes">00 :</span>
+                    <span class="text seconds">&nbsp;00 :</span>
+                    <span class="text milseconds">&nbsp;00</span>
                 </div>
             </div>
             <div class="button-wrapper">
@@ -35,10 +35,10 @@
                 <button class="button lap hidden">Lap</button>
             </div>
         </div>
-        <ul class="laps">
-            <button class="lap-clear-button hidden">Clear All</button>
-        </ul>
+        <ul class="laps"></ul>
+        <button class="lap-clear-button hidden">Clear All</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
